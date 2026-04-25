@@ -1,7 +1,7 @@
 # Job Tracker Platform (MERN)
 
 ## 🚀 Live Demo
-https://your-app.vercel.app
+comming soon
 
 ## 🧠 Overview
 Full-stack SaaS-style job tracking platform with authentication, job management, filtering, and analytics.
