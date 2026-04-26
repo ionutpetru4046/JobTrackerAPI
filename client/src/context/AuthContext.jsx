@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState, useCallback } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
 import api from "../services/api";
 
 // Helper: Only send token for authenticated routes.
@@ -26,7 +32,7 @@ if (!api.__AUTH_CONTEXT_INTERCEPTOR_ATTACHED) {
       }
       return config;
     },
-    (error) => Promise.reject(error)
+    (error) => Promise.reject(error),
   );
   api.__AUTH_CONTEXT_INTERCEPTOR_ATTACHED = true;
 }
@@ -62,7 +68,11 @@ export function AuthProvider({ children }) {
     try {
       console.log("Attempting register with:", { name, email, password });
       // Use a consistent register endpoint (without host)
-      const { data } = await api.post("/auth/register", { name, email, password });
+      const { data } = await api.post("/auth/register", {
+        name,
+        email,
+        password,
+      });
       console.log("Register response:", data);
       if (!data?.token) throw new Error("No token returned from backend");
       localStorage.setItem("token", data.token);

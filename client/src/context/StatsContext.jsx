@@ -1,4 +1,10 @@
-import { createContext, useContext, useCallback, useState, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useCallback,
+  useState,
+  useEffect,
+} from "react";
 import { jobsService } from "../services/jobsService";
 
 const StatsContext = createContext();
